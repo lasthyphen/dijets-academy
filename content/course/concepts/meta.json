@@ -1,0 +1,29 @@
+{
+  "title": "Cryptocurrency Basics",
+  "root": true,
+  "pages": [
+    "crypto",
+    "crypto-myths",
+    "crypto-vs-fiat",
+    "coins-vs-tokens",
+    "crypto-txs",
+    "decentralised-applications",
+    "crypto-portfolio",
+    "privacy",
+    "usecases",
+    "impact-payment-systems",
+    "regulations",
+    "cbdcs",
+    "cbml",
+    "rwas",
+    "stablecoins",
+    "erc20",
+    "ico",
+    "tokenomics",
+    "game-theory",
+    "byzantine",
+    "mining",
+    "block-time"
+
+  ]
+}

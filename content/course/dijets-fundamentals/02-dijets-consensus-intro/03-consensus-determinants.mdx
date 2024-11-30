@@ -1,0 +1,60 @@
+---
+title: Determinants
+description: Learn about the Dijets Consensus protocol.
+updated: 2024-05-31
+authors: [ashucoder9]
+icon: BookOpen
+---
+
+Dijets protocol operates through repeated sub-sampled voting. When a validator is determining whether a block should be accepted, it asks a small, random subset of validators on their preferences. Based on the responses the validator gets, it might change its own preference.
+
+Dijets Consensus resembles a recurring process of sub-sampled voting but with greater adaptability to changes in the network through the use of Determinants & adaptive sampling, the protocol dynamically adjusts the sampling rate based on real-time network conditions and workload, ensuring optimal performance. Dijets consensus shows that even if the network starts out in the worst possible scenario of a 50–50 split between two states, there is high probability that the sccenario will no longer hold after just a single round of adaptive sampling. Furthermore, the probability of the 50/50 split scenario increasingly & astronomically continues to get smaller with each subsequent round of voting i.e. Dijets enforces it to decay exponentially. Just as a bowling pin in a wobbly state falling to its right or left Dijets protocol is designed to tip one way or the other and never stay in the middle or a split state. As the network continues to sway one way or tip more on one side, its perception shifts to one agreed state or the other. The speed with which the network moves towards one direction continues to increase until it reaches an irreversible point whereby the entire network has agreed on a state.
+
+## Changing Preference
+
+Let's consider an example to understand how a validator in Dijets consensus may change his decision preference. Assuming that you are one of the validators trying to determine if the block should be accepted or not.
+
+We start by sampling the current preference of five other nodes. The nodes reply with: 2 preferring green (Yes) and 3 preferring purple (No). 
+
+### α-majority
+
+The alpha majority parameter is the minimum number of the sampled validators that agree on the same decision. This parameter can be changed based on the network requirements. For the purpose of our example, let's assume that the alpha value is set to 3.
+
+Dijets consensus dictates, that a validator will change its preference if an α-majority of the sampled validators agree on another option and it goes along with this popular choice. 
+
+We will change our preference when 3 out of 5 sampled nodes have another preference. Since 3 out of 5 have replied with purple (No) we will also change our own preference to No. 
+
+From there on we respond with purple, when another validator queries us for our current preference. 
+
+<Quiz quizId="104"/>
+
+## Consecutive Successes
+
+Dijets Consensus does not run for a fixed number of rounds, but until a decision threshold is hit. This means the validator keep sampling until their preference is confirmed for beta (β) consecutive rounds.
+
+Now you query another five validators for their preference. Again, three of the five reply with the preference purple (Bob). Since your current preference is confirmed, you increment a counter for consecutive successes by one. You repeat this sampling process until their preference is confirmed for 8 consecutive rounds. 
+
+<div className="bg-gray-50 dark:bg-black flex items-center justify-center p-8">
+![](/course-images/dijets-fundamentals/consensus.gif)
+</div>
+
+## Parameters of Dijets Consensus
+
+In our example we used fixed values for how many nodes are sampled, how many are needed to change our preference and how many consecutive rounds of successes we require to finalize our decision. These consensus parameters are formalized in the table below and can be chosen by every node individually to meet their needs.
+
+|Symbol|Name|Range|Explanation|
+|---|---|---|---|
+|n  |Number of Participants|1 to ∞|How many participants take part in the system?|
+|k  |Sample Size|1 to n|How many of these participants get asked every round of sub-sampling?|
+|α  |Quorum Size|1 to k|How many of the asked participants have to have the same preference for me to change my preference?|
+|β  |Decision Threshold|>= 1|How many times does the quorum have to confirm my preference until I finalize my decision?|
+
+You can visualise &amp; simulate network nodes reaching consensus (agreement) in Dijets below or [give it a try yourself](https://dijets.io/consensus/) to see how Nodes in Dijets network exploit the metastability principle to all collapse to an agreed state.
+
+## Finalization
+
+In the common case when a transaction has no conflicts, finalization happens very quickly. When conflicts exist, honest validators quickly cluster around conflicting transactions, entering a positive feedback loop until all correct validators prefer that transaction. This leads to the acceptance of non-conflicting transactions and the rejection of conflicting transactions.
+
+Dijets Consensus guarantees (with high probability based on system parameters) that if any honest validator accepts a transaction, all honest validators will come to the same conclusion.
+
+<Quiz quizId="105"/>

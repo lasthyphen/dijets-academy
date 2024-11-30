@@ -1,0 +1,60 @@
+---
+title: Use Dijets Swaply
+description: Get first hand experience with Dijets ECC.
+updated: 2024-05-31
+authors: [ashucoder9]
+icon: Terminal
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+In this activity, we'll interact with our first Dijets ECC. The Swaply Dijets ECC aims to replicate the user experience of a centralized exchange (CEX) with greater decentralization and transparency. By using a Dijets ECC, Swaply can offer cheaper transaction fees than other traditional decentralized exchanges while keeping the transparency that centralized exchanges lack.
+
+<Steps>
+<Step>
+
+### Display the Swaply Dijets in Decypher
+
+Make sure your Decypher Wallet is set to Testnet mode, so we do not use real funds. Open your Decypher Wallet Browser Extension and click "Show all Networks." To display Swaply to our home screen, click the star icon next to its name.
+
+</Step>
+<Step>
+
+### Bridge Tokens to Swaply
+
+Head over to the Dijets Swaply DApp, connect your wallet (top right), and click on the `Balances` Tab in the `Trade` page. You will have to authenticate your wallet for the first time you interact with Swaply.
+
+On the `Balances` tab, select to deposit into the Dijets Swaply.
+
+Enter 1 DJT and click Deposit. Confirm the transaction in your wallet.
+
+A few moments later, your balances should be updated in the `Balances` tab:
+
+</Step>
+<Step>
+
+### Swap Tokens on Dijets Swaply
+
+Now head to the `Trade` tab and sell 0.5 DJT for USDC. You can select the trading pair DJT/USDC on the top right. The website will prompt your wallet to switch networks to the Dijets Swaply. Confirm the switch and then sign the transaction.
+
+![](/course-images/dijets-fundamentals/17.png)
+
+Now, head back to the `Balances` tab and check how the balances updated.
+
+</Step>
+<Step>
+
+### Withdraw to Lothar Utility Chain
+
+From the `Balances` tab, withdraw your DJT and USDC back to the Lothar Utility Chain by clicking on the "Withdraw To Wallet" option in the drop down menu:
+
+Make sure the network is set to Lothar Utility Chain and enter the amount you want to withdraw. Click on the Withdraw button and confirm the transaction in your wallet.
+
+</Step>
+</Steps>
+
+## What just happened?
+
+On the surface, it might feel like a regular decentralized swap. However, there is a substantial difference. We performed our operation not on the Utility Chain, but bridged our tokens to a Dijets ECC, performed the operations there, and bridged our tokens back to the Utility Chain.
+
+The Dijets ECC (Swaply) we used was highly specialized for our use case and very cheap. We actually got all the gas token SWPY we needed airdropped, just for bridging assets over. The only fees we had to pay were for bridging. Usually, we would not have done this for a single operation, so these costs do not occur for a single trade, but only for depositing and withdrawing from the portfolio.

@@ -1,0 +1,18 @@
+---
+title: Activating InterECC Messaging
+description: Learn how to activate InterECC Messaging on your blockchain create with Dijets CLI
+updated: 2024-06-28
+authors: [usmaneth]
+icon: Terminal
+---
+
+Dijets offers native interoperability between all Dijets ECCs. You will be asked if you want to connect your blockchain with other blockchains or the Utility Chain. Select the first option to enable your blockchain to interoperate with other blockchains and the Utility Chain. You can simply activate it by selecting `Yes`.
+
+```
+? Do you want to connect your blockchain with other blockchains or the Utility Chain?: 
+  ▸ Yes, I want to enable my blockchain to interoperate with other blockchains and the Utility Chain
+    No, I want to run my blockchain isolated
+    Explain the difference
+```
+
+This will result in the warp precompile being activated and the InterECC Messaging contracts to be deployed to your Dijets ECC. Furthermore, if you deploy it on a local network, Dijets CLI will also run a relayer for you. You will can learn more about how the interoperability work in the course Dijets InterECC Messaging.

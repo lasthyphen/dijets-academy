@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+  font-family: 'custom-font-book';
+  src: url(/fonts/CustomFont-Book.woff2) format('woff2'),
+    url(/fonts/CustomFont-Book.woff) format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'custom-font-medium';
+  src: url(/fonts/CustomFont-Medium.woff2) format('woff2'),
+    url(/fonts/CustomFont-Medium.woff) format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'metaserifprobold';
+  src: url(/fonts/MetaSerifPro-Bold.woff2) format('woff2'),
+    url(/fonts/MetaSerifPro-Bold.woff) format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "custom-font-book", sans-serif !important;
+  font-optical-sizing: auto !important;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+h2,h3,h4 {
+  font-family: "metaserifprobold", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+.prose {
+  font-size: 1rem;
+}
+
+.border-avax-red {
+  --tw-border-opacity: 1;
+  border-color: #e84142;
+}
+
+.bg-avax-red {
+  --tw-bg-opacity: 1;
+  background-color: #e84142;
+}
+
+.border-avax-green {
+  --tw-border-opacity: 1;
+  border-color: #0B7f54;
+}
+
+.bg-avax-green {
+  --tw-bg-opacity: 1;
+  background-color: #0B7f54;
+}
+
+/* List items in prose */
+.prose :where(ul > li):not(:where([class~="not-prose"],[class~="not-prose"] *))::marker {
+  color: #E84142;
+}
+
+.uwu {
+  --background: 240 80% 94% !important;
+  --popover: 240 80% 94% !important;
+  --primary: 230 90% 72% !important;
+  --border: 230 30% 87% !important;
+  --accent: 250 80% 90% !important;
+  --secondary: 230 40% 94% !important;
+  --muted: 230 80% 92% !important;
+  --card: 230 90% 94% !important;
+}
+
+.uwu.dark {
+  --background: 240 40% 20% !important;
+  --popover: 240 20% 20% !important;
+  --primary: 250 70% 94% !important;
+  --border: 230 30% 30% !important;
+  --muted: 230 30% 36.3% !important;
+  --secondary: 250 30% 36.3% !important;
+  --accent: 250 20% 38.3% !important;
+  --muted-foreground: 230 80% 84% !important;
+  --card: 230 40% 26.3% !important;
+}
+
+/* Fix padding bug in Code block */
+.nd-codeblock .highlighted {
+  padding: 0 16px;
+}
+
+.my-6 > svg.lucide {
+  color: #fff;
+}
+
+#comment-box {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+#comment-box::-webkit-scrollbar {
+  width: 1px;
+}
+
+#comment-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#comment-box::-webkit-scrollbar-thumb {
+  background: #02d473;
+  border-radius: 1px;
+}
+
+#comment-box::-webkit-scrollbar-thumb:hover {
+  background: #2a3f85;
+}
+
+@media screen and (max-width: 768px) {
+    #comment-box {
+        max-height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #comment-box {
+        max-height: 200px;
+    }
+}
+
+.quiz-option-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.quiz-feedback-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fef3c7;
+  color: #92400e;
+  margin-right: 8px;
+}
+
+.quiz-try-again-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  color: #4b5563;
+  background-color: white;
+  transition: background-color 0.2s;
+}
+
+.quiz-try-again-button:hover {
+  background-color: #f9fafb;
+}
+
+.quiz-try-again-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}

@@ -1,0 +1,53 @@
+---
+title: Crypto Privacy & Anonymity
+description: Privacy coins are a category of cryptocurrency with built-in features designed to make transaction data as anonymous as possible.
+updated: 2024-05-31
+authors: [ashucoder9]
+icon: Book
+---
+
+The transparent nature of a public blockchain allows users to independently examine all the activity occurring in the network and ensure the system is working as it should. This was a particularly important consideration when Bitcoin launched as the first blockchain.
+
+However, the fact that transactions on a transparent blockchain aren’t fully private has implications for user privacy. For example, if Dooba sends Lia one BTC, he knows Lia’s Bitcoin address, and he can now observe all Lia’s payment flows each time she uses that address and potentially determine the total amount of BTC she holds.
+
+This tension between privacy and transparency has always been an inherent feature of public blockchains like Bitcoin. However, in the years following Bitcoin’s genesis, it was a common misconception that BTC transactions were private since no personally identifying data is needed to set up a Bitcoin address.
+
+For example, in 2013, the FBI shut down the Silk Road, an infamous dark web marketplace. Once the details of the case emerged, it became apparent that law enforcement agencies had traced the flow of BTC payments to a receiving address associated with Silk Road’s owner, eventually identified as Ross Ulbricht.
+
+Bitcoin is now more widely recognized as a pseudonymous system, where users operate under the pseudonym of an account address rather than their name. However, the undoing of Silk Road led to a desire for increased transaction anonymity among the crypto community, which in turn, led to the emergence of privacy coins.
+
+## Introduction to privacy coins
+Privacy coins are an important segment of the crypto ecosystem since they meet the demand from a subsection of users who want to transact without revealing any identifying information.
+
+However, this has made them a controversial asset class. Proponents argue that privacy is a human right, and private transactions have important legitimate use cases – for example, getting funding to people suffering under oppressive regimes. Opponents, on the other hand, point out that privacy coins are the medium of exchange of choice for those laundering the proceeds of illicit activities.
+
+## Types of Private Coins
+
+Each type of privacy coin offers a varying level of anonymity and uses different methods to achieve this.
+
+## Ring Signatures
+Ring signatures, used by Monero, are used to obscure transaction details by making it impossible to definitively tell which key was used to sign the transaction.
+
+Every time a payment is sent, upon signature, the protocol randomly selects a number of old signatures and adds them to the transaction. Since the transaction has been signed by a valid signatory, the nodes can validate it, but the blockchain record will contain too much information for the transaction to be traced back to any one of several addresses.
+
+This level of obfuscation introduces the risk of a double-spend, so every transaction on Monero also generates a key image – that is, a unique cryptographic key output. Since the output is encrypted, it’s impossible to reverse-engineer the transaction from its key image. If anyone attempts to launch a double-spend attack, the protocol will detect it from the key image, and reject the second transaction.
+
+Cryptocurrencies like Monero use stealth addresses, which are one-time addresses generated for each sender and recipient for each transaction, making it even more difficult to trace payment flows.
+
+## Zero-knowledge (ZK) technology
+Privacy coins make use of zero-knowledge technology to enable the validation of transactions without recording the details of the transaction as a public blockchain record. Zero-knowledge technology allows one party to prove a fact to another party without disclosing the details of the fact itself.
+
+Zcash uses a variation of zero-knowledge technology called zk-SNARKs, which stands for Zero-Knowledge Succinct Non-Interactive Argument of Knowledge. zk-SNARKs were created by the project developers as a means of enabling private transactions with ZEC.
+
+## Mixing protocols
+Mixing protocols, such as CoinJoin, were developed for Bitcoin and Dash and attempt to obfuscate transactions by mixing multiple payments from different senders into a single blockchain transaction.
+
+In this way, the transaction will show inputs and outputs that are seemingly unconnected to one another, making it more difficult to know the sender or recipient for each payment.
+
+## Privacy Coins and Regulation
+
+Privacy coins are often viewed as higher-risk assets by the international Financial Action Task Force (FATF) and by national AML authorities. Some jurisdictions, such as Dubai, outlaw the use of privacy coins entirely.
+
+To abide by various AML regulations, cryptocurrency service providers often assess whether deposited or withdrawn crypto has exposure to illicit activities or entities. In the event of an illicit activity, these providers may be required to provide sending and receiving addresses to authorities to aid ongoing investigations. These tasks may be inhibited by the various anonymity techniques used by privacy coins. For this reason, many CEXs choose not to list privacy coins.
+
+Privacy coins do not comply with the FATF Travel Rule, which is a compliance requirement designed to combat money laundering and the financing of terrorism.

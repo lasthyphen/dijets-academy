@@ -1,0 +1,17 @@
+{
+  "title": "subnet-architecture",
+  "root": true,
+  "pages": [
+    "index",
+    "---Custom Blockchains---",
+    "...02-custom-blockchains",
+    "---Dijets Starter Kit---",
+    "...03-dijets-starter-kit",
+    "---Independent Tokenomics---",
+    "...04-independent-tokenomics",
+    "---Interoperability---",
+    "...05-interoperability",
+    "---Conclusion---",
+    "certificate"
+  ]
+}

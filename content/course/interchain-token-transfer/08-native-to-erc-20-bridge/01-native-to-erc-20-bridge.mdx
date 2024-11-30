@@ -1,0 +1,18 @@
+---
+title: Native to ERC-20 Token Bridge Overview
+description: Learn how to transfer native Dijets ECC tokens to the Utility Chain as ERC-20 tokens.
+updated: 2024-09-09
+authors: [owenwahlgren]
+icon: Book
+---
+
+DITTO is also capable of bridging native tokens from Dijets ECCs to the Utility Chain as ERC-20 tokens. This process involves deploying a `NativeTokenHome` contract on the Dijets ECC, and a `ERC20TokenRemote` contract on the Utility Chain. The `NativeTokenHome` contract will be used to bridge the native token to the Utility Chain as an ERC-20 token.
+
+This example will cover native to ERC-20 token bridging between `mydijetschain` and the Utility Chain, but the process can be adapted to bridge the Utility Chain's native asset, `DJT`, to any ECC as an ERC-20 token.
+
+### What we will do
+1. Deploy a Wrapped Native Token to `mydijetschain`
+2. Deploy the `NativeTokenHome` contract on `mydijetschain`
+3. Deploy the `ERC20TokenRemote` contract on the Utility Chain
+4. Register `ERC20TokenRemote` on Utility Chain with `NativeTokenHome` on `mydijetschain`
+4. Perform a transfer of the native token on `mydijetschain` to the Utility Chain as an ERC-20 token

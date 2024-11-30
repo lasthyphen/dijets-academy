@@ -1,0 +1,17 @@
+{
+  "title": "dijets-fundamentals",
+  "root": true,
+  "pages": [
+    "index",
+    "---Primer on Dijets Consensus---",
+    "...02-dijets-consensus-intro",
+    "---Ternary Chain Ledgers---",
+    "...03-ternary-chain-ledgers-intro",
+    "---Virtual Machines & Blockchains---",
+    "...05-vms-and-blockchains",
+    "---Virtual Machine Customization---",
+    "...06-vm-customization",
+    "---Course Completion---",
+    "get-certificate"
+  ]
+}

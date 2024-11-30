@@ -1,0 +1,21 @@
+'use client';
+import type { ReactNode } from 'react';
+
+export function Title(): React.ReactElement {
+
+  const svgCode = `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><g clip-path="url(#a)"><path fill="url(#b)" d="M0 19.2C0 12.48 0 9.12 1.308 6.552a12 12 0 0 1 5.244-5.244C9.12 0 12.48 0 19.2 0h9.6c6.72 0 10.08 0 12.648 1.308a12 12 0 0 1 5.244 5.244C48 9.12 48 12.48 48 19.2v9.6c0 6.72 0 10.08-1.308 12.648a12 12 0 0 1-5.244 5.244C38.88 48 35.52 48 28.8 48h-9.6c-6.72 0-10.08 0-12.648-1.308a12 12 0 0 1-5.244-5.244C0 38.88 0 35.52 0 28.8v-9.6Z"/><g clip-path="url(#c)"><path fill="#fff" d="M17.504 15.57c.058-.066.086-.117.131-.148 1.083-.756 2.148-1.54 3.258-2.253 1.15-.738 2.42-1.17 3.808-1.169 1.294.002 2.469.412 3.534 1.12.511.342 1.012.72 1.468 1.135.737.67.812 1.865.227 2.667-.132.18-.267.192-.44.077-.24-.158-.477-.321-.719-.474-2.457-1.539-4.916-1.522-7.373.003-.389.243-.775.49-1.174.72-.08.047-.23.065-.3.02-.767-.506-1.521-1.027-2.282-1.547-.043-.03-.077-.082-.138-.15Z"/><path fill="#fff" d="M13 16.203c.045.046.123.088.13.138.053.488.36.816.731 1.077 3.405 2.407 6.808 4.814 10.225 7.204.824.577 1.478.544 2.294-.029 1.858-1.308 3.72-2.619 5.575-3.931 1.052-.745 1.818-1.713 2.22-2.94.14-.428.196-.883.255-1.162 0 1.068.08 2.306-.022 3.53-.123 1.51-.883 2.752-2.098 3.65-2.02 1.492-4.085 2.93-6.148 4.368-.672.467-1.383.345-2.04-.082a59.823 59.823 0 0 1-2-1.35c-2.716-1.925-5.428-3.86-8.144-5.79-.466-.33-.831-.72-.914-1.31l.003-2.88c0-.072-.043-.146-.067-.219v-.274Z"/><path fill="#fff" d="M13 23.76c.042.028.12.053.123.087.06.543.425.872.83 1.167 1.562 1.135 3.113 2.28 4.689 3.392 1.748 1.229 3.518 2.427 5.278 3.635 1.01.691 1.57.694 2.579-.011 1.788-1.25 3.564-2.516 5.35-3.768 1.069-.746 1.875-1.692 2.293-2.927.156-.459.22-.948.385-1.424-.046 1.328-.006 2.668-.159 3.984-.168 1.41-.944 2.56-2.086 3.399-2.007 1.474-4.053 2.9-6.096 4.327-.714.5-1.444.352-2.128-.102a111.185 111.185 0 0 1-2.646-1.806c-2.509-1.781-5.012-3.573-7.517-5.362-.448-.32-.766-.721-.837-1.283.003-.972.01-1.945.006-2.917 0-.062-.04-.124-.064-.185v-.206Z"/><g filter="url(#d)"><path fill="url(#e)" fill-opacity=".15" fill-rule="evenodd" d="m25.5 33 6.5-4.5c.786-.528 1.557-1.66 1.998-2.5.273-.518.396-.928.5-1.5.002.5-.183 1.304-.323 2.012a4.792 4.792 0 0 1-2.03 3.05l-6.645 4.44V33Z" clip-rule="evenodd"/></g><g filter="url(#f)"><path fill="url(#g)" fill-opacity=".15" fill-rule="evenodd" d="m25.503 25.5 5.997-4c.786-.528 1.747-1.768 2.189-2.607.272-.519.709-.32.812-.893.002.5-.358 1.292-.498 2-1.003 1.5-1.114 1.747-2.168 2.454L25.503 27v-1.5Z" clip-rule="evenodd"/></g></g></g><defs><linearGradient id="b" x1="10.881" x2="34.583" y1="1.582" y2="47.172" gradientUnits="userSpaceOnUse"><stop stop-color="#33343B"/><stop offset="1" stop-color="#18191E"/></linearGradient><linearGradient id="e" x1="33" x2="27" y1="25" y2="36.5" gradientUnits="userSpaceOnUse"><stop stop-color="#0B0B0F"/><stop offset="1" stop-color="#0B0B0F" stop-opacity="0"/></linearGradient><linearGradient id="g" x1="32.68" x2="26.68" y1="17.891" y2="29.391" gradientUnits="userSpaceOnUse"><stop stop-color="#0B0B0F"/><stop offset="1" stop-color="#0B0B0F" stop-opacity="0"/></linearGradient><clipPath id="a"><path fill="#fff" d="M0 0h48v48H0z"/></clipPath><clipPath id="c"><path fill="#fff" d="M13 12h21.527v24H13z"/></clipPath><filter id="d" width="9.703" height="10.209" x="25.146" y="24.146" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_901_90" stdDeviation=".177"/></filter><filter id="f" width="9.703" height="9.707" x="25.15" y="17.646" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_901_90" stdDeviation=".177"/></filter></defs></svg>`
+  return (
+    <>
+      <img width="80" height="80" src={`data:image/svg+xml;utf8,${encodeURIComponent(svgCode)}`} className="size-7" alt="logo" />
+      <span style={{fontWeight: "600"}}>Academy</span>
+    </>
+  );
+}
+
+export function Body({
+  children,
+}: {
+  children: ReactNode;
+}): React.ReactElement {
+  return <div>{children}</div>;
+}

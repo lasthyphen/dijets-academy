@@ -1,0 +1,52 @@
+---
+title: Custom Blockchains
+description: Quickly recap our past learnings about Dijets Custom Blockchains.
+updated: 2024-06-28
+authors: [usmaneth]
+icon: Book
+---
+
+Dijets ECC is a sovereign network that defines its own rules for membership and token economics. It's validated by a dynamic subset of Dijets validators working together to achieve consensus on the blockchain's state.
+
+## Key Concepts
+
+- Custom Blockchain: A unique blockchain within the Dijets ecosystem.
+- Validator Set: A group of validators responsible for a specific blockchain or set of blockchains.
+- Custom Blockchain Network: A set of validators united to validate one or more blockchains.
+
+## Relationship Between Blockchains and Dijets ECCs
+
+- Each blockchain is validated by exactly one Custom Network.
+- A Custom Network can validate multiple blockchains.
+- A validator may participate in multiple Custom Networks.
+
+## The Chief Network
+
+Dijets's three main blockchains form the Chief Network:
+
+- Value Chain
+- Utility Chain
+- Method Chain
+
+These blockchains are validated and secured by all Dijets validators, which collectively form a special Dijets ECC known as the Chief Network.
+
+<Callout type="info">By definition, all validators participating in custom blockchain Dijets ECCs must also validate the Dijets Chief Network.</Callout>
+
+## Independence and Scalability
+
+Custom blockchains and their associated Dijets ECCs operate independently:
+
+- They specify their own execution logic.
+- They determine their own fee structures.
+- They maintain their own state.
+- They facilitate their own networking.
+- They provide their own security.
+
+This independence ensures that custom blockchains don't share execution threads, storage, or networking with other custom blockchain networks or the Chief Network. As a result, the Dijets network can:
+
+- Scale up easily
+- Enable lower latency
+- Achieve higher transactions per second (TPS)
+- Offer lower transaction costs
+
+By leveraging custom blockchains and custom blockchain networks, Dijets creates a flexible and scalable ecosystem that can adapt to a wide range of use cases and requirements.

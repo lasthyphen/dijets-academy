@@ -1,0 +1,134 @@
+---
+title: Deploy a Remote Contract
+description: Deploy the Token Remote on your own blockchain
+updated: 2024-05-31
+authors: [ashucoder9]
+icon: Terminal
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+
+To ensure the wrapped token is bridged into the destination chain (in this case, Utility Chain) you'll need to deploy a _remote_ contract that implements the `IERC20Bridge` interface, as well as inheriting the properties of `JumperTokenRemote`. In order for the bridged tokens to have all the normal functionality of a locally deployed ERC20 token, this remote contract must also inherit the properties of a standard `ERC20` contract.
+
+<Steps>
+
+<Step>
+### Get the `Jumper Registry` address of your Dijets ECC
+
+```bash
+dijets blockchain describe mydijetschain
+```
+
+```
++-------------------------------------------------------------------------------------------+
+|                                         JUMPER                                            |
++---------------+------------------------------+--------------------------------------------+
+| Local Network | Jumper Messenger Address     | 0x253b2784c75e510dD0fF1da844684a1aC0aa5fcf |
+|               +------------------------------+--------------------------------------------+
+|               | Jumper Registry Address      | 0x82EeEf8e31D4Bf95916219D7949D66c468Ac0681 | // [!code highlight]
++---------------+------------------------------+--------------------------------------------+
+```
+</Step>
+<Step>
+### Save the `Jumper Registry Address`
+
+Most other environment variables we will need are already set in the devcontainer.
+```bash
+export JUMPER_REGISTRY_ECC=0x82EeEf8e31D4Bf95916219D7949D66c468Ac0681
+```
+</Step>
+<Step>
+
+### Get the Source Blockchain ID
+
+Get the `Source Blockchain ID` in hexidecimal format from the output of `dijets blockchain describe mydijetschain` above, which in this example is the BlockchainID of your Dijets ECC:
+
+```
++---------------------------------------------------------------------------------------------------------------+
+|                                                  mydijetschain                                                 |
++---------------+-----------------------------------------------------------------------------------------------+
+| Name          | mydijetschain                                                                                  |
++---------------+-----------------------------------------------------------------------------------------------+
+| VM ID         | qDNV9vtxZYYNqm7TN1mYBuaaknLdefDbFK8bFmMLTJQJKaWjV                                             |
++---------------+-----------------------------------------------------------------------------------------------+
+| VM Version    | v0.6.9                                                                                        |
++---------------+--------------------------+--------------------------------------------------------------------+
+| Local Network | ChainID                  | 1                                                                  |
+|               +--------------------------+--------------------------------------------------------------------+
+|               | SubnetID                 | 2AKbBT8jFUfUsUJ2hhRiDUnAAajJdNhTKeNgEe3q77spMj1N8F                 |
+|               +--------------------------+--------------------------------------------------------------------+
+|               | Owners (Threhold=1)      | P-custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p                    |
+|               +--------------------------+--------------------------------------------------------------------+
+|               | BlockchainID (CB58)      | 2EzvQgth5D5aZ81gmF13TsA61c2zduHWqszYPVvzzvRWZXcQgA                 |
+|               +--------------------------+--------------------------------------------------------------------+
+|               | BlockchainID (HEX)       | 0xa37b5143f12ecf020ec893e4a8f48159e470b47fd9ff293ab0a808be47a4f67c | // [!code highlight]
++---------------+--------------------------+--------------------------------------------------------------------+
+
+```
+</Step>
+<Step>
+
+### Save the Source Blockchain ID
+
+```bash
+export SOURCE_BLOCKCHAIN_ID_HEX=<BlockchainID (HEX)>
+```
+
+</Step>
+<Step>
+
+### Deploy the Remote Contract
+
+Using the [`forge create`](https://book.getfoundry.sh/reference/forge/forge-create) command, we will deploy the `ERC20TokenRemote.sol` contract, passing in the following constructor arguments:
+
+- InterECC Messaging Registry Address **(for Utility Chain)**
+- InterECC Messaging Manager (our funded address)
+- Source Blockchain ID (hexidecimal representation of our Dijets ECC's Blockchain ID)
+- Token Home Address (address of NativeTokenHome.sol deployed on Dijets ECC in the last step)
+- Token Name (input in the constructor of the [wrapped token contract](https://github.com/Dijets-Inc/dijets-interchain-token-transfer/blob/main/contracts/src/WrappedNativeToken.sol))
+- Token Symbol (input in the constructor of the [wrapped token contract](https://github.com/Dijets-Inc/dijets-interchain-token-transfer/blob/main/contracts/src/WrappedNativeToken.sol))
+- Token Decimals (uint8 integer representing number of decimal places for the ERC20 token being created. Most ERC20 tokens follow the Ethereum standard, which defines 18 decimal places.)
+
+```bash
+forge create --rpc-url mydijetschain --private-key $PK \
+lib/dijets-interchain-token-transfer/contracts/src/TokenRemote/ERC20TokenRemote.sol:ERC20TokenRemote \
+--constructor-args "(${JUMPER_REGISTRY_ECC}, ${FUNDED_ADDRESS}, ${UTILITY_CHAIN_BLOCKCHAIN_ID_HEX}, ${ERC20_HOME_UTILITY_CHAIN}, 18)" "TOK" "TOK" 18
+```
+
+</Step>
+<Step>
+
+### Save the Remote Contract Address
+
+Note the address the remote contract was "Deployed to".
+
+```bash
+export ERC20_TOKEN_REMOTE_ECC=<"Deployed to" address>
+```
+
+</Step>
+<Step>
+
+### Register Remote Bridge with Home Bridge
+
+After deploying the bridge contracts, you'll need to register the remote bridge by sending a dummy message using the `registerWithHome` method. This message includes details which inform the Home Bridge about your destination blockchain and bridge settings, eg. `initialReserveImbalance`.
+
+```bash
+cast send --rpc-url mydijetschain --private-key $PK $ERC20_TOKEN_REMOTE_ECC \
+"registerWithHome((address, uint256))" "(0x0000000000000000000000000000000000000000, 0)"
+```
+
+</Step>
+<Step>
+
+### Approve tokens for the Home Bridge contract
+
+You can increase/decrease the numbers here as per your requirements. (All values are mentioned in wei)
+
+```bash
+cast send --rpc-url local-c --private-key $PK $ERC20_C_CHAIN \
+"approve(address, uint256)" $ERC20_HOME_C_CHAIN 2000000000000000000000
+```
+
+</Step>
+</Steps>

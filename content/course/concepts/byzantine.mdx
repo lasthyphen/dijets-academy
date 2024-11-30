@@ -1,0 +1,42 @@
+---
+title: The Byzantine General's Problem
+description: Describes the difficulties of reaching consensus in distributed systems
+updated: 2024-05-31
+authors: [ashucoder9]
+icon: Book
+---
+
+The Byzantine Generals' Problem is an analogy used to describe the difficulties of reaching consensus in distributed systems. These systems are computing environments where components are spread across many computers (also known as nodes) connected via a specific network.
+
+The Byzantine Generals' Problem is a popular game theory query, one which studies rational behavior in decision-making. It draws on a hypothetical historical scenario to illustrate a common problem: in a decentralized network where no participant can verify the identity or reputation of others, how can participants know who is telling the truth?
+
+## The Byzantine Generals' Problem
+In the Byzantine Generals' Problem, the scenario involves multiple regiments of the Byzantine army stationed at various areas outside an enemy city.
+
+The generals in charge of each regiment must coordinate together to launch an attack that can overcome enemy defenses. Each general can use a messenger to communicate with the others, but there is no way of knowing whether the message has been intercepted and tampered with by the enemy. The only way to launch a successful attack is to find a way to ensure that a sufficient number of generals are honest and will lead their regiments into the attack.
+
+One potential solution for the problem is for the commander to send a command to attack or retreat to all the generals. Upon receipt, each general must decide whether to attack or retreat and send their vote back to the commander and to all other generals. Each general collects votes from the other generals, and if any are not consistent, they ignore the votes from the dissenting generals. The generals use the majority to choose whether to attack or retreat, send the decision back to the commander, and it is executed.
+
+## History of the Byzantine Generals' Problem in distributed technology
+The problem of coordinating consensus among participants in distributed systems was first identified by computer scientists in the late 1970s.
+
+In 1982, Leslie Lamport, Robert Shostak, and Marshall Pease published a paper called “The Byzantine Generals' Problem,” which states that “a reliable computer system must be able to cope with the failure of one or more of its components. A failed component may exhibit a type of behavior that is often overlooked--namely, sending conflicting information to different parts of the system.”
+
+In this definition, a system may still be deemed reliable even if one or more components have failed. It leads to the concept of “Byzantine Fault Tolerance” in a distributed system, which provides a measure of the ability for a system (or generals) to resist a certain amount of failure and still collaborate to make a system work.
+
+In the late 1990s, two researchers, Barbara Liskov and Miguel Castro, developed a consensus algorithm for distributed networks called Practical Byzantine Fault Tolerance (pBFT). However, a major flaw was found when the time taken to reach consensus increased exponentially with the number of nodes on the network. Nevertheless, it was significant enough that variations of pBFT are still used today in contemporary blockchain systems such as Zilliqa and Cosmos.
+
+A breakthrough in addressing the Byzantine Generals' Problem occurred in 2008 when Satoshi Nakamoto published the Bitcoin whitepaper, which introduced the proof of work (PoW) algorithm.
+
+## How Dijets addresses the Byzantine Generals' Problem
+
+Dijets network addresses the Byzantine Generals Problem (BGP)—ensuring consensus in a decentralized, trustless environment even when some participants may act maliciously. It does so by employing a refined iteration of the Gossip protocol exploitation of the metastability principle for its Consensus Mechanism, which is distinct from traditional consensus algorithms like Proof of Work (PoW) or Proof of Stake (PoS). The process ensures rapid, scalable, and fault-tolerant consensus.
+
+## Key features of Dijets Consensus:
+- Decentralized Trust: No single node or subset of nodes controls the process; consensus emerges organically.
+- Fault Tolerance: Dijets tolerates up to 51% Byzantine (malicious or faulty) nodes, ensuring security even in adversarial settings.
+- Scalability: The lightweight sampling process enables thousands of transactions per second (TPS), unlike PoW-based systems that struggle with throughput.
+- Low Latency: Transactions achieve finality in seconds due to the rapid convergence of the probabilistic consensus mechanism.
+- Resilience to Attacks: By limiting direct communication and relying on random sampling, Dijets is resilient to coordinated attacks (e.g., Sybil attacks).
+
+Dijets solves the Byzantine Generals Problem by combining robust sub-sampling, enhanced validation, and confidence thresholds to achieve a fast, scalable, and robust consensus. It's innovative approach provides strong guarantees of correctness and fault tolerance while addressing the scalability limitations of earlier blockchain protocols.

@@ -1,0 +1,48 @@
+---
+title: Throughput vs. Time to Finality
+description: Learn how metrics like throughput and time to finality are different.
+updated: 2024-05-31
+authors: [ashucoder9]
+icon: BookOpen
+---
+
+import LottieAnim from '@/components/lottieanim';
+
+To measure blockchain performance we can use two metrics:
+
+- Throughput: How many transaction are finalized per second measured in transactions per second (TPS)
+- Time to Finality: How long does it take a transaction to go from being submitted to validators to being unchangeable. 
+
+These metrics are very different. Blockchain builders aspire to high throughput and very short time to finality.
+
+## Checkout Analogy
+
+Imagine a grocery store checkout system to better understand the difference and relation between throughput and transaction finality.
+
+- **Customers:** Think of each customer in the store as an individual transaction.
+- **Checkout lanes:** The number of checkout lanes represents the total throughput. More checkout lanes mean more customers can be checked out at the same time, analogous to more transactions being processed simultaneously in a blockchain network.
+- **Scanners per lane:** The efficiency or speed of the checkout process can be likened to the number of scanners per lane. If a lane has multiple scanners, multiple items can be scanned and processed faster, similar to increasing blockchain block size to handle more data per block and thus increasing throughput.
+- **Time at checkout:** The time it takes for a customer to finish checkout and leave the store represents the transaction finality. As soon as a customer completes checkout and steps out of the store, it’s analogous to a transaction being confirmed and finalized, meaning it can no longer be reverted.
+
+### In summary:
+
+- Customers = Transactions
+- Checkout lanes = Number of blocks/throughput
+- Scanners per lane = Block size/transactions processed per block
+- Time at checkout = Time to finality
+
+Using this analogy, we can say that Dijets goal is to build a grocery store with more checkout lanes and faster scanners that can process more customers (transactions) at a time, and the time it takes for a customer to check out and leave the store representing the transaction's finality in a blockchain.
+
+<div className="flex flex-col w-full justify-center items-center">
+    <LottieAnim />
+</div>
+
+### Throughput and Finality of Popular Blockchain Networks
+
+|Network|Throughput|Time to Finality|
+|---|---|---|
+|Bitcoin|7 TPS|60 min|
+|Ethereum|30 TPS|6.4 min|
+|Dijets|5500 TPS|~0.6 seconds|
+
+

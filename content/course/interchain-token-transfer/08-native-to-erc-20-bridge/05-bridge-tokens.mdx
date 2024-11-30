@@ -1,0 +1,36 @@
+---
+title: Native Token Bridge Transfer
+description: Perform a transfer of a native Dijets ECC token to the Utility Chain as an ERC-20 token.
+updated: 2024-05-31
+authors: [ashucoder9, owenwahlgren]
+icon: Book
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+<Step>
+### Transfer the ECC's Native Token to the Utility Chain
+
+Now that all the bridge contracts have been deployed and configured, send some native tokens from your Dijets ECC to Utility Chain with the [`cast send`](https://book.getfoundry.sh/reference/cast/cast-send) foundry command.
+
+```bash
+cast send --rpc-url mydijetschain --private-key $PK $ERC20_HOME_BRIDGE_ECC \
+"send((bytes32, address, address, address, uint256, uint256, uint256, address))" \
+"(${C_CHAIN_BLOCKCHAIN_ID_HEX}, ${ERC20_TOKEN_REMOTE_C_CHAIN}, ${FUNDED_ADDRESS}, 0x0000000000000000000000000000000000000000, 0, 0, 250000, 0x0000000000000000000000000000000000000000)"  --value 1ether
+```
+</Step>
+
+<Step>
+### Check Balance
+To confirm the token was bridged from Dijets ECC to Utility Chain, we will check the recipient's balance of wrapped tokens on the Utility Chain with the [`cast call`](https://book.getfoundry.sh/reference/cast/cast-call?highlight=cast%20call#cast-call) foundry command:
+
+```bash
+cast call --rpc-url local-c $ERC20_TOKEN_REMOTE_C_CHAIN "balanceOf(address)(uint)" $FUNDED_ADDRESS
+```
+
+```bash
+1000000000000000000
+```
+**Success!** We have bridged 1 native token from our Dijets ECC to the Utility Chain as an ERC-20 token.
+</Step>
+</Steps>

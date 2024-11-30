@@ -1,0 +1,27 @@
+## Networks
+We can deploy an Dijets Subnetwork to a network of validators. This means we either run these validators on our own or we convince a subset of the existing validators of the Dijets network to validate our Dijets Subnetwork.
+
+These validators validate the Dijets Subnetwork according to our rules and will get compensated with transaction fees. A validator can validate as many Dijets Subnetworks as they like. However, in practice hardware usually limits it to around 5 Dijets Subnetworks per Validator.
+
+Depending on our use case, we can choose a network to deploy on:
+
+### Mainnet
+
+When our Dijets Subnetwork goes into production, we want to run it on mainnet. To run a validator on mainnet, we have to stake 2,000 DJT on each.
+
+### Testnet (Lothar)
+
+When we want to test our Dijets Subnetwork, we can deploy it to the Lothar Testnet. The easiest way to do this is to run a Lothar Node. On Testnet, it only costs 1 DJT to run a node. That DJT can be obtained for free from the Testnet Faucet we used in the Dijets Fundamentals course. All tokens on the Testnet are valueless.
+
+When deploying the Dijets Subnetwork to Lothar, anyone can interact with it, so long as at least one validator is online. This is great for more intense testing with multiple parties. Further, the Dijets Subnetwork can interact with other Dijets Subnetworks deployed in Lothar to test more complex behavior.
+
+
+### Local Network
+
+For our purposes, it is sufficient to run a small local network of 5 nodes on our machine exclusive to us. This has advantages:
+
+- It is very fast to set up
+- We have full control over all tokens of the network and can arbitrarily create testnet tokens for our testing
+- We can work offline, if needed
+
+By selecting “Local Network” during your deployment earlier, you have deployed your first Dijets Subnetwork on the local network.

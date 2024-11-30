@@ -1,0 +1,37 @@
+In order to add your blockchain to the wallet, you need to have the following information:
+
+- Network RPC URL
+- Network Name
+- Chain ID
+- Network Token Symbol
+- Network Token Name
+
+You can find this information in the output of the `dijets blockchain deploy mydijetschain` command or by issuing the command `dijets blockchain describe mydijetschain`:
+
+```
++-------------------------------------------------------------------------------------------------------+
+|                                           WALLET CONNECTION                                           |
++-----------------+-------------------------------------------------------------------------------------+
+| Network RPC URL | https://humble-tribble-q7qvgwr6j44265v6-9650.app.github.dev/ext/bc/mydijetschain/rpc |
+|                 | Please make sure to set visibility of port 9650 to public                           |
++-----------------+-------------------------------------------------------------------------------------+
+| Network Name    | mydijetschain                                                                        |
++-----------------+-------------------------------------------------------------------------------------+
+| Chain ID        | 9999                                                                                |
++-----------------+-------------------------------------------------------------------------------------+
+| Token Symbol    | TOK                                                                                 |
++-----------------+-------------------------------------------------------------------------------------+
+| Token Name      | TOK Token                                                                           |
++-----------------+-------------------------------------------------------------------------------------+
+```
+
+## Open Add Network Screen
+
+Now, open the Decypher browser extension and navigate to the screen to add a new network.
+
+Now enter the values from the table of our deployed blockchain.
+
+> Make sure you have published the port `9650` in your Codespace.
+
+
+

@@ -1,0 +1,32 @@
+---
+title: Deploy a Home Contract
+description: Deploy the Token Home on utility chain
+updated: 2024-05-31
+authors: [ashucoder9]
+icon: Terminal
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+
+We will deploy two Dijets Interchain Token Transfer contracts. One of the source chain (which is utility chain in our case) and another on the destination chain (mydijetschain in our case).
+
+<Steps>
+<Step>
+
+### Deploy ERC20Home Contract
+
+```bash
+forge create --rpc-url local-c --private-key $PK lib/dijets-interchain-token-transfer/contracts/src/TokenHome/ERC20TokenHome.sol:ERC20TokenHome --constructor-args $JUMPER_REGISTRY_UTILITY_CHAIN $FUNDED_ADDRESS $ERC20_C_CHAIN 18
+```
+
+</Step>
+<Step>
+
+### Save the ERC-20 Home Address
+
+```bash
+export ERC20_HOME_C_CHAIN=<"Deployed to" address>
+```
+
+</Step>
+</Steps>
